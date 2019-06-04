@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout">
+
+	<h1 layout:fragment="header">
+		Cadastro de Clientes
+	</h1>
+	
+	<div layout:fragment="content" class="input-form">
+		<div class="well">
+			<form id="clienteForm" th:action="@{/clientes/(form)}" th:object="${cliente}"
+				action="#" method="post" class="form-horizontal">
+			
+<!-- 				<div th:if="${#fields.hasErrors('*')}" class="alert alert-error"> -->
+<!-- 					<p th:each="error : ${#fields.hasErrors('*')}" th:text="${error}"> -->
+<!-- 						Erro de validação -->
+<!-- 					</p> -->
+<!-- 				</div> -->
+				
+				<input type="hidden" th:field="*{id}" th:class="${#fields.hasErrors('id')} ? 'field-error'">
+				<div class="form-group">
+					<label class="control-label" for="nome">Nome</label>
+					<input type="text" class="form-control" th:field="*{nome}">
+					<div th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="label alert-danger"></div>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="endereco">Endereço</label>
+					<textarea class="form-control" th:field="*{endereco}"></textarea>
+					<div th:if="${#fields.hasErrors('endereco')}" th:errors="*{endereco}" class="label alert-danger"></div>
+				</div>
+				
+				<input type="submit" value="Gravar" class="btn btn-primary">
+
+				<a th:href="@{/clientes/}" href="clientes.html" class="btn btn-default"> voltar </a>
+			</form>
+		</div>
+	</div>
+
+</html>
