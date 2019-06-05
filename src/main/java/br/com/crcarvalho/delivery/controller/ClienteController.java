@@ -50,7 +50,7 @@ public class ClienteController {
 		
 		clienteRepository.save(cliente);
 		
-		attr.addFlashAttribute("globalMessage", "Cliente cadastrado com sucesso");
+		attr.addFlashAttribute("globalMessage", "Cliente salvo com sucesso");
 		
 		return new ModelAndView("redirect:/" + CLIENTE_URI + cliente.getId());
 	}
