@@ -75,7 +75,7 @@ public class PedidoController {
 			Long ultimoPedido = Collections.max(pedidosId);
 			
 			// Cria o objeto com as informações do novo pedido criado
-			dto = new RespostaDTO(ultimoPedido, valorTotal, "Pedido Efetuado com sucesso");
+			dto = new RespostaDTO(ultimoPedido, valorTotal, "Pedido efetuado com sucesso");
 			
 		}catch (Exception ex) {
 			dto.setMensagem("Erro: " + ex.getMessage());
