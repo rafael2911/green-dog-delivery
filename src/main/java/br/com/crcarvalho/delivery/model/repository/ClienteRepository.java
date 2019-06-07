@@ -8,4 +8,6 @@ import br.com.crcarvalho.delivery.model.entity.Cliente;
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
+	public Cliente findByNome(String nome);
+
 }

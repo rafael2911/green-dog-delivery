@@ -82,5 +82,10 @@ public class Cliente {
 		
 		this.pedidos.add(pedidoDoFernando);	
 	}
+
+	@Override
+	public String toString() {
+		return "Cliente [id=" + id + ", nome=" + nome + ", endereco=" + endereco + ", pedidos=" + pedidos + "]";
+	}
 	
 }
